@@ -28,6 +28,8 @@ class Curl implements CurlInterface
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
 
         $content = curl_exec($ch);
         if ($content === false) {
